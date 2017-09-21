@@ -1,0 +1,87 @@
+DriverManager.getConnection("jdbc:postgresql://192.168.11.171/sample?loglevel=2")
+    trying org.postgresql.Driver
+00:13:42.721 (1) PostgreSQL 9.4.1212
+00:13:42.753 (1) Trying to establish a protocol version 3 connection to 192.168.11.171:5432
+00:13:42.775 (1) Receive Buffer Size is 183680
+00:13:42.778 (1) Send Buffer Size is 43520
+00:13:42.787 (1)  FE=> StartupPacket(user=postgres, database=sample, client_encoding=UTF8, DateStyle=ISO, TimeZone=Asia/Tokyo, extra_float_digits=2)
+00:13:42.793 (1)  <=BE AuthenticationOk
+00:13:42.867 (1)  <=BE ParameterStatus(application_name = )
+00:13:42.869 (1)  <=BE ParameterStatus(client_encoding = UTF8)
+00:13:42.870 (1)  <=BE ParameterStatus(DateStyle = ISO, MDY)
+00:13:42.870 (1)  <=BE ParameterStatus(integer_datetimes = on)
+00:13:42.870 (1)  <=BE ParameterStatus(IntervalStyle = postgres)
+00:13:42.870 (1)  <=BE ParameterStatus(is_superuser = on)
+00:13:42.870 (1)  <=BE ParameterStatus(server_encoding = UTF8)
+00:13:42.870 (1)  <=BE ParameterStatus(server_version = 9.6.3)
+00:13:42.870 (1)  <=BE ParameterStatus(session_authorization = postgres)
+00:13:42.870 (1)  <=BE ParameterStatus(standard_conforming_strings = on)
+00:13:42.870 (1)  <=BE ParameterStatus(TimeZone = Asia/Tokyo)
+00:13:42.870 (1)  <=BE BackendKeyData(pid=2829,ckey=781752979)
+00:13:42.872 (1)  <=BE ReadyForQuery(I)
+00:13:42.880 (1) simple execute, handler=org.postgresql.core.SetupQueryRunner$SimpleResultHandler@c4437c4, maxRows=0, fetchSize=0, flags=1047
+00:13:42.881 (1)  FE=> Parse(stmt=null,query="SET extra_float_digits = 3",oids={})
+00:13:42.881 (1)  FE=> Bind(stmt=null,portal=null)
+00:13:42.881 (1)  FE=> Execute(portal=null,limit=1)
+00:13:42.883 (1)  FE=> Sync
+00:13:42.884 (1)  <=BE ParseComplete [null]
+00:13:42.884 (1)  <=BE BindComplete [unnamed]
+00:13:42.884 (1)  <=BE CommandStatus(SET)
+00:13:42.884 (1)  <=BE ReadyForQuery(I)
+00:13:42.885 (1)     compatible = 90400
+00:13:42.885 (1)     loglevel = 2
+00:13:42.885 (1)     prepare threshold = 5
+00:13:42.892 (1)     types using binary send = TIMESTAMPTZ,UUID,INT2_ARRAY,INT4_ARRAY,BYTEA,TEXT_ARRAY,TIMETZ,INT8,INT2,INT4,VARCHAR_ARRAY,INT8_ARRAY,POINT,TIMESTAMP,TIME,BOX,FLOAT4,FLOAT8,FLOAT4_ARRAY,FLOAT8_ARRAY
+00:13:42.893 (1)     types using binary receive = TIMESTAMPTZ,UUID,INT2_ARRAY,INT4_ARRAY,BYTEA,TEXT_ARRAY,TIMETZ,INT8,INT2,INT4,VARCHAR_ARRAY,INT8_ARRAY,POINT,DATE,TIMESTAMP,TIME,BOX,FLOAT4,FLOAT8,FLOAT4_ARRAY,FLOAT8_ARRAY
+00:13:42.893 (1)     integer date/time = true
+getConnection returning org.postgresql.Driver
+00:13:42.967 (1) simple execute, handler=org.postgresql.jdbc.PgStatement$StatementResultHandler@67424e82, maxRows=0, fetchSize=6, flags=9
+00:13:42.968 (1)  FE=> Parse(stmt=null,query="BEGIN",oids={})
+00:13:42.968 (1)  FE=> Bind(stmt=null,portal=null)
+00:13:42.968 (1)  FE=> Execute(portal=null,limit=0)
+00:13:42.968 (1)  FE=> Parse(stmt=S_1,query="select * from a",oids={})
+00:13:42.973 (1)  FE=> Bind(stmt=S_1,portal=C_2)
+00:13:42.973 (1)  FE=> Describe(portal=C_2)
+00:13:42.973 (1)  FE=> Execute(portal=C_2,limit=6)
+00:13:42.973 (1)  FE=> Sync
+00:13:42.974 (1)  <=BE ParseComplete [null]
+00:13:42.977 (1)  <=BE BindComplete [unnamed]
+00:13:42.977 (1)  <=BE CommandStatus(BEGIN)
+00:13:42.978 (1)  <=BE ParseComplete [S_1]
+00:13:42.980 (1)  <=BE BindComplete [C_2]
+00:13:42.980 (1)  <=BE RowDescription(2)
+00:13:42.980 (1)         Field(id,INT4,4,T)
+00:13:42.980 (1)         Field(name,VARCHAR,65535,T)
+00:13:42.980 (1)  <=BE DataRow(len=4)
+00:13:42.980 (1)  <=BE DataRow(len=4)
+00:13:42.980 (1)  <=BE DataRow(len=4)
+00:13:42.980 (1)  <=BE CommandStatus(SELECT 3)
+00:13:43.007 (1)  <=BE ReadyForQuery(T)
+00:13:43.013 (1) simple execute, handler=org.postgresql.jdbc.PgStatement$StatementResultHandler@1698c449, maxRows=0, fetchSize=0, flags=1
+00:13:43.013 (1)  FE=> ClosePortal(C_2)
+00:13:43.016 (1)  FE=> Parse(stmt=null,query="select * from a",oids={})
+00:13:43.016 (1)  FE=> Bind(stmt=null,portal=null)
+00:13:43.016 (1)  FE=> Describe(portal=null)
+00:13:43.017 (1)  FE=> Execute(portal=null,limit=0)
+00:13:43.018 (1)  FE=> Sync
+00:13:43.018 (1)  <=BE CloseComplete
+00:13:43.022 (1)  <=BE ParseComplete [null]
+00:13:43.022 (1)  <=BE BindComplete [unnamed]
+00:13:43.022 (1)  <=BE RowDescription(2)
+00:13:43.022 (1)         Field(id,INT4,4,T)
+00:13:43.022 (1)         Field(name,VARCHAR,65535,T)
+00:13:43.022 (1)  <=BE DataRow(len=4)
+00:13:43.023 (1)  <=BE DataRow(len=4)
+00:13:43.023 (1)  <=BE DataRow(len=4)
+00:13:43.023 (1)  <=BE CommandStatus(SELECT 3)
+00:13:43.023 (1)  <=BE ReadyForQuery(T)
+00:13:43.023 (1) simple execute, handler=org.postgresql.jdbc.PgConnection$TransactionCommandHandler@443b7951, maxRows=0, fetchSize=0, flags=22
+00:13:43.023 (1)  FE=> Parse(stmt=S_3,query="COMMIT",oids={})
+00:13:43.023 (1)  FE=> Bind(stmt=S_3,portal=null)
+00:13:43.023 (1)  FE=> Execute(portal=null,limit=1)
+00:13:43.023 (1)  FE=> Sync
+00:13:43.024 (1)  <=BE ParseComplete [S_3]
+00:13:43.024 (1)  <=BE BindComplete [unnamed]
+00:13:43.034 (1)  <=BE CommandStatus(COMMIT)
+00:13:43.035 (1)  <=BE ReadyForQuery(I)
+00:13:43.035 (1)  FE=> Terminate
